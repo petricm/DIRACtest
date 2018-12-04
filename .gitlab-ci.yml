@@ -1,0 +1,10 @@
+stages:
+    - prepare
+
+compile:
+  stage: prepare
+  tags:
+    - docker
+  image: cern/cc7-base
+  script:
+    - git status
