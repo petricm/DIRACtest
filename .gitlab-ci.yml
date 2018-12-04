@@ -8,5 +8,9 @@ compile:
   image: cern/cc7-base
   script:
     - yum install git -y
-    - git status
+    - echo "$SSH_KEY" | tr -d '\r' | ssh-add - > /dev/null
+    - mkdir -p ~/.ssh
+    - chmod 700 ~/.ssh
+    - git remote add upstream git@github.com:petricm/DIRACtest.git
     - git remote -vv
+    - git fetch upstream
