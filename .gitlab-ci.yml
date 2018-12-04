@@ -9,3 +9,4 @@ compile:
   script:
     - yum install git -y
     - git status
+    - git remote -vv
