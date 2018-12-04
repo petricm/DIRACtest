@@ -8,6 +8,7 @@ compile:
   image: cern/cc7-base
   script:
     - yum install git -y
+    - eval `ssh-agent -s`
     - echo "$SSH_KEY" | tr -d '\r' | ssh-add - > /dev/null
     - mkdir -p ~/.ssh
     - chmod 700 ~/.ssh
