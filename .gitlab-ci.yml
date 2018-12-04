@@ -9,10 +9,9 @@ compile:
   script:
     - yum install git less -y
     - eval `ssh-agent -s`
-    - echo "$SSH_KEY" | tr -d '\r' | ssh-add - > /dev/null
     - mkdir -p ~/.ssh
     - chmod 700 ~/.ssh
+    - echo "$SSH_KEY" | tr -d '\r' > /root/.ssh/id_rsa
     - git remote add upstream git@github.com:petricm/DIRACtest.git
     - git remote -vv
-    - less ~/.ssh/id_rsa
     - git fetch upstream
