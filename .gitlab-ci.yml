@@ -14,5 +14,5 @@ compile:
     - echo "$SSH_KEY" | tr -d '\r' > /root/.ssh/id_rsa
     - git remote add upstream git@github.com:petricm/DIRACtest.git
     - git remote -vv
-    - ssh-keygen -R github.com
+    - ssh-keyscan -H github.com >> /root/.ssh/known_hosts
     - git fetch upstream
