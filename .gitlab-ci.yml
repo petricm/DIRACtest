@@ -12,6 +12,7 @@ compile:
     - mkdir -p ~/.ssh
     - chmod 700 ~/.ssh
     - echo "$SSH_KEY" | tr -d '\r' > /root/.ssh/id_rsa
+    - chmod 700 /root/.ssh/id_rsa
     - git remote add upstream git@github.com:petricm/DIRACtest.git
     - git remote -vv
     - ssh-keyscan -H github.com >> /root/.ssh/known_hosts
