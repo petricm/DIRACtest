@@ -7,4 +7,5 @@ compile:
     - docker
   image: cern/cc7-base
   script:
+    - yum install git -y
     - git status
